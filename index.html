@@ -78,7 +78,8 @@
     </div>
 
     <div class="form-group">
-        <label for="helmet">Tier do helmet: <a href="https://retronia.online/about/itemsView/Helmets" target="_blank">?</a></label>
+        <label for="helmet">Tier do helmet: <a href="https://retronia.online/about/itemsView/Helmets"
+                target="_blank">?</a></label>
         <select id="helmet" onchange="calculate()">
             <option value="0">Nenhum</option>
             <option value="0.2">Tier 1</option>
@@ -89,7 +90,8 @@
     </div>
 
     <div class="form-group">
-        <label for="armor">Tier da armor: <a href="https://retronia.online/about/itemsView/Armors" target="_blank">?</a></label>
+        <label for="armor">Tier da armor: <a href="https://retronia.online/about/itemsView/Armors"
+                target="_blank">?</a></label>
         <select id="armor" onchange="calculate()">
             <option value="0">Nenhum</option>
             <option value="0.2">Tier 1</option>
@@ -100,7 +102,8 @@
     </div>
 
     <div class="form-group">
-        <label for="legs">Tier da legs: <a href="https://retronia.online/about/itemsView/Legs" target="_blank">?</a></label>
+        <label for="legs">Tier da legs: <a href="https://retronia.online/about/itemsView/Legs"
+                target="_blank">?</a></label>
         <select id="legs" onchange="calculate()">
             <option value="0">Nenhum</option>
             <option value="0.2">Tier 1</option>
@@ -111,7 +114,8 @@
     </div>
 
     <div class="form-group">
-        <label for="boots">Tier da bota: <a href="https://retronia.online/about/itemsView/Boots" target="_blank">?</a></label>
+        <label for="boots">Tier da bota: <a href="https://retronia.online/about/itemsView/Boots"
+                target="_blank">?</a></label>
         <select id="boots" onchange="calculate()">
             <option value="0">Nenhum</option>
             <option value="0.2">Tier 1</option>
@@ -122,7 +126,8 @@
     </div>
 
     <div class="form-group">
-        <label for="shield">Tier do shield: <a href="https://retronia.online/about/itemsView/Shields" target="_blank">?</a></label>
+        <label for="shield">Tier do shield: <a href="https://retronia.online/about/itemsView/Shields"
+                target="_blank">?</a></label>
         <select id="shield" onchange="calculate()">
             <option value="0">Nenhum</option>
             <option value="0.2">Tier 1</option>
@@ -136,22 +141,19 @@
 
     <script>
         const spells = {
-            'druid': {
-                'UH': { cost: 100, quantity: 20, img: './images/uh.gif' },
-                'HMM': { cost: 70, quantity: 20, img: './images/hmm.gif' },
-                'GFB': { cost: 120, quantity: 20, img: './images/gfb.gif' }
-            },
-            'sorcerer': {
-                'SD': { cost: 220, quantity: 20, img: './images/sd.gif' },
-                'HMM': { cost: 70, quantity: 20, img: './images/hmm.gif' },
-                'GFB': { cost: 120, quantity: 20, img: './images/gfb.gif' }
-            },
-            'paladin': {
-                'HMM': { cost: 70, quantity: 20, img: './images/hmm.gif' },
-                'Bolt': { cost: 70, quantity: 200, img: './images/conjure_bolt.gif' },
-                'PowerBolt': { cost: 200, quantity: 2000, img: './images/conjure_power_bolt.gif' },
-                'BurstArrow': { cost: 120, quantity: 400, img: './images/conjure_explosive_arrow.gif' }
-            }
+            'HMM': { cost: 70, quantity: 20, img: 'data:image/gif;base64,R0lGODlhIAAgAPfSABAEGgAAAYA9oggCEAAAA/+X/aBPzZBMplctcYM/qaNV1LNf56lY3GEmdahb3LRe5XY3lmMmdeqE+Hw/oX88oaNS0qBT0DYKO4FBp10vceqA6ns2mHU+kJtMyJNOonc9lQYCCQUCDGs2igEBBiERKPOL+WwuhAcEChoGKII/pp9SzcZp951QyoRAqlgiaKZV1zYNQapb4A8IFJFIutB18lIfaJhLvykJOZBKu3MyjH8/ozwVUVYsbT4VU5FJvJRKwM5u74hDsG02jgEBBKNT0MFs7tBy8ctr3XQyjjINQOiD94M+o2M1c5JKvJZJvnY7lrtk7RgMHx0HLK5d5V8odzgdSCAPKQUDB4xGs3c8m8Jn7qBU0QsDFCoVNotFtI5GtahW2a9bvMFm7oE/pns1kxYFIgwDEKBNyYVDrZdNwyQIMWstg1gjbVojapBJuqlX2Q4EFmgtf4tFsyAHL4xItpVLwBwOIZRLwIpFsYpHtdF181UraYxFtFQeY0INQ49KunU0lIlCrzIPRmAndwQCCgMBAg8DEgQBCikVNgYDCCwJNSIIMm4xiG01ihoOGz4STH48oZtQy3MyjatX3rhi7AcCDJ9SzoZFrwIBCJxPxkcZWVkhbYRBq5BGuV0weKxX3J1PzFMkcSsJM7df7MRp7qlZ2nQ8iHs3mS4XPEYWViYSMR8QJOF89Z9T0EcXWjQaQ8hq61QgZo1CqwEBA/iN+oI/p3g7mphLwIlBrII9oKpXykIYW5hLvIc/qV8peYZCqpZLwGI1Z3tAlSMSK1wueHY3mMNn7oE/pJdOxE8dZEUZW5dMxLRj65VMxXU0krdh7EglUgAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAANIALAAAAAAgACAAQAj/AKUJHEiwoMGDCAuiMFLAyy8fuJYESEhxYIA8zKa0wIPow50mEFwoqkhxgIJissgAqtHD1RCSMGPCVKbnFqdGV07Y6eBsEwCZBhe9aKVqUhZYHBjwGhQNqNOnUIFGa7bFRq9CUQfekKDkjwA6boIgaZqVkJgKGHR0enUkjJxTbcg+3VWKCAIhjg4Es0ShAYioAGg8SzBmDw8NDkRpCpFVYLRoBMpwqdS4suXLmAUGkAJAbmU4rCj9+JTJ16HGA2LQeoNGADJIOTw/3VFCS60UnhIJE8BGNlA1pL7Y6vIEmodVZyJc8A0z2oIHfAxgQaUrTSRGfgxBxRRKRZFLUWQMRjMV6JgJM1EFWQBVZRkJIEzqbOgzK+ocY2CIWRExIcMKSakwBxMBo0AxgxM4AMMCFTAkIWBM0eSyRhyxPJLMCJllqOFlAQEAOw==' },
+            'GFB': { cost: 120, quantity: 20, img: 'data:image/gif;base64,R0lGODlhIAAgAPf/ALZBMbI/MLU/L64/Mq8+LyUOA38rGUobFRAGATsWEWcjE2EhEw4FAS4QA28mGBcIBAIBAFogEWAgESgOAzoVBgkDAUMYCDMTDxkJArVAMLI/L8ZHN9NLPSsQA8FFNcNGNNhNPNpOQLI+L4swH7VBL9RLPMdHOblCMvpiVedRRPpkVudTRsZGOv1wXrZALbM/MKU5KXEpHHAnGV0jGlskG6U6KetSQZAyI+dSRN1hSX8sHMxHNHMoFg4GBG0lFlUeDvxuXgwFAcBFM3QnFe5WRNxPQY4yIrhAKa0+LsNGN64+MMdRPflhVuRwWPpjVv9/e8RGNxkLCaI6MONQQWUjE9dLPIUvH/pZSvBWRikPDMhIOv97b689MPdZS+ZSQftqXe5YReNRPhQHBbhBM/+AdiQODP9/boErGdZMPs1JOjUTDrtCMb9ENL9FNXgrIdBJN2slFsNGOHYoFzUSBM9KPMtIOcdIOblBMb9DM/xvYiwQDMRDL8dHNzsWCdZMOz4WCfxqXPxrXf52Zb1DMtJKPPlfUvhbTbE/MchHOMpHOcBFN0saDfJYRj0VB7pDM/tmVvpjVfhaS/lfT8RHOR8LAsJYR6M6KrNALtpOP7xBLc9HMvlhUO1URrJJN6w8LK4+Lc5IObtPPXsqGmsvJvxuYIRAM+5UR/ZkUP96bDkTB9BKOOFQQ7M/LvxqXaQ6KmQiEJUzI9ZLNb1DNflfUNhPQuVSQqY6K/+Ae0MXCMtJOUcZCqA4JsNGNXYoFrtBMoQwInYrIPRXSLlCNCEMCcxJO8FFNDERA75DM71DNPhbSq87J7hCMmskFHYpF85KPMdIOpI6LPhdS+BQP9ZMQcpINycSD8FDNP95a6E3IdZJM6c7LNhNPsVDMdpOPZdFNbtAL79EM/RWRogvH0AdF+1YSOxURScOC7lCMelSQ1ogGWwlE04eF8FDLsZGNjoVD1AcF/JXSddOPf9+bu9TRUgZDEsbD+BRQvtnV5I0H8VGODIUDxMHAeJRP/+Ad9VLPP///yH5BAEAAP8ALAAAAAAgACAAQAj/AP8JHEiwoMGDCAV2GIBCnpkW91oF2pKHyRdBq/pUSEhwAiFJITR40APtzokNuRAdKEXHw7R8IwwsgMCxps2bOG/uQwNo3osMbmhkWAOAlbR13mSpYneEWyYJCGx28CQCRg0hXMpU0mKrFw9mDv5EzUm2rNmzaAUiSHHrSTQQATT8SnAgnZJTs5KhM0TEWgwGHCtgQjFFAIEHWDIUA8DLnqMo1D74igPi26uNCRm4KoJjgzMo4xKYyzKqiYlnbRTd8KEuSM4H9Cz8WCADToRFGPYBTsu7t+/fwIMnrFDAgi4KFBoYazAhFa59mHEiCIGKzKMS3crVusKpi5NCpK5BtjpUIDrCCir6RdpF4py7GUvAhLpwwY+XPdlshNtRzzXCfZNsEswlnwyTAwEkHMMBHgNU084g/ryhjCbYjHXQHPAA4cILSIjRBDhhnCBCGlLow8EKtJggACwR0IQQBEaUYEoVoAijBjB1jMHCOz3wY0cSicRjhQQN2ISBNtvw8QExJpDTCSNsyLKMJeIoIIoMHeSEARVnGDDECLHgI0czOijQCAK7mVUBA5QgUAEE5gkn55x0ohUQADs=' },
+            'UH': { cost: 100, quantity: 20, img: 'data:image/gif;base64,R0lGODlhIAAgAPf/AAkJJwgIJQICEwQEGgYGIAICEgQEGAYGHwIEBgMDFgAADQIDBQEBASxThgMDGCtRhAEBEChHewcHIypOglTk/x4lXSdFeTRsnS1XijVunilKfhwgWjFklhkYURYVSRwhWi1YjB8qYihFei9gkC5ZiyhIfDJnlylLfypOgCEwZytShCtRhhgWTSpPgzl2rjuFsTmBrTppsD+QviVCeypOgzRvoCtLgzVsoyhHfC5YizNrmixWjC1UiDRuny1dlCpPgSxShTJlmDJnmCpNgUqy2CZCdTh4qC5bjitTgxs7UR05Vzl/rUuw2Q4aKw0ZJzp/rkes1yxShk273ylCeDBjlDBhlUGYwSxThyxViBgxSC1ViUu22yxYhitPgwcHJC1ZijZ2pC1ViyM1aitQgipNfyEvZSAvZhIlNiZCdyZBdidBdhobVCpNgg8OOCM3axMSQxUnQBgYUxkYUBImNxgXTxYVSBYURwoUHw0NNQsWIytNgS9cjihJfi9djitPhCxShECHxSxThU6/5idAcyhJfS1Vh0es1S5ckCQ4b0KZxEWeykCVvxsdWBsfWjdzoihFeR8pYQMGCQQHCy5ajC9cjy1Yijl7qUiu1kis0yxWhiZAcT2LuAgNGVTj/hUTRhISRAcGBCxSgytOgzBglkOcxzVxoChLgjRrmiQ6by9aijp/rC9cjTuEsyxViUq12ixbhRkXUTFmlhYuRkCUwAoTHSZDdxkXUCc/dSxVizRtnyxLhSdEeSdJgixPgxguSTFhmCpPgCpVgC5XjT+QvBYVTCIyZxMmOy9dkCpMfwUFHDuFtBkYUhgWThUURgsWITuDs0q53ihEdipKfgQIDDZ0pCA9YzZ2pwgNFyY7dCY+cESk0kan0j+Ruz+NuyErYi5XiiAtYyIzaTyItDyGsz2Ktzh7rDqBryVAeC5YijJpmkOKzC5ajRwgWC1bjitMgDh2pShGejhoqk6/5QkIIzRsnBQrPjZzoihEeDJVly1aiRMSQSI1aypQgk/C6BkaVf///yH5BAEAAP8ALAAAAAAgACAAQAj/AP8JHEiwoMGDCP8loNYpnYYRQ1Kt4FFqmCVTABIiTDDLSKsIo+rdqMZACaAmE4Q1QGRLgEaEBCYMqgAJ1rJGnxS8RCgggAQHAwbs3JngBSZpJUBQ4ZIEAa0qeki4qNHCy1CBEk6QwoBCjAYy+KbAsxdtA6MOeK6qXct2bQIfhqRQ6Lct0ZJyMw44aKvQxKVdp46p4lDEjztRfd7R25dMrQFxMCJcOWIs3whJwUjcCbWjwZh2LncWkEGkQRcU/NZdW+DrgYo/IFDViSNUbYAgudysAaerVgo6zVh4gMC3uPHjyJOrLUCD3IUvaD60GbC3eABtFChsWWRFkSto3cDww6rtVggTESf4rLAg4t4jDuM2mSE/NEEGQSV6WdvT41UkJDY8cIE5lRBDn0YDPKMMDhhgkckZJmShjiw54HIIMIGcU91LA7DiSARszDFNHggwsIAzCyAQDyFphEPcTgJA8YQWDRTyixPfGBMLHBOEQQkyxXiQwFCgbCCPDg/8YEEDKnASQxRAoONGBZ74M+RV9nHzQApqZINNGbdo8gEzHejz4lrzTLJKCOx4E4IcdrDwxgHHCSBBAAfcKcCZyvXp558BAQA7' },
+            'SD': { cost: 220, quantity: 20, img: 'data:image/gif;base64,R0lGODlhIAAgAPf/AJePhSEgHsvAs7+3qU9LRYaAd7Wto1JLQ1tVTH53bqqjmB0cHEZCOgkJCEI+Op6Xi2tmXZWOhEpFQpKLgJKJf05NTYR9coN8cg8ODXpzaVNPSWxnXiYlIlpTSzw4Mjo2MQQEBAEBASAeHBoYFRQUFCknJRMSEQcHBgwMC5OLgpKMgUA8NmdjXI+If29oXoB4a4qCd0VERKWek6eflYZ9dGRfVsG4rNLJwe3hy2RcVIZ/dZiSindybY+IffTl0Onf0JSJfYyEeZqRhpqUiZmUiouFe8S8r87OyI+Igc3DtpaQho6Ie1hVTFlVTg8PDltWTFpWT2xlX6KYkFZRR2JgWrOuoLOsnqifloaAc761q8m/rwsLC9DFtIqCeH19fUpEPuTWxNDJu8a4qYF5bDIvLJOMgHpyZ5CKf5GKf3dxaDIwK5ePgJWNf1pTTERCPV5XTysqKdvb2zw5M72ypFJNSFxXUEI+No+HfqqimKSflDAtKnhvZZ+akmZdVXBrYXJpYIV9cYR+cse9sO3j0YiBd2xkW2pjXYmBdq+nmRIQD3ZwZ5SNg2NcVK2mnJGJfmhkWmtlWxgXFkhEPoaGhktGPpqQgYJ6camfkVNTUZ+ViNXV1XVuYrKrn4N9dM/Pz2NcUxQUElhPSQUFBWxmXDgzLsO5qaWflYeCeqKbjnFsYtPMwKadkpKMgtvOwYd+d6KZj6OajY6EeuXXx5mRh5mRiLGnnJ6WjqOckP//////9n53a5ONhY6GepiQhY6Ifnt1beDZzXdwZJCIfqSckUZDPryxpJiQiImBd/744paRiaukm0Q/OjEuKjMvKufayIyDetzRvNLLvZWPgpeNgbmwpN3Sx720pqWlpcm+sNvPv5OLgF5YU52Wi5+Uip+XiW9nX+bm5m9qYispJaegmbapmriuoce8r5uVi4B4bZWMgnBqYp2Vh0xHQC8sKImAdq6lmpSMg2NeV5GJfxQSEHJuZ4F5cIF6cYF4bXtxZZGKfjUyL0ZDPC4rKT05NFpXUv///yH5BAEAAP8ALAAAAAAgACAAQAj/AP8JHEiwoMGDCAfCwaVqGCcFqF5Ru1FtQK80UEAkNHiiGLQzFnil4NNEFKYHGiak0LACw8aDIBj9SWBr3B0ku7psYPABxcufA0GACBECqEE95ayx0eVkaAg5sVhlcLPFqMAGPOQls9CpAQdw9EpAqJVvypd5Vgk6HSiKhKi0cOP+ExVAnAN1KqpkkeIKW6so/YpaDTGLnKIxFLRheaEtUAEVSpZpNArCig8cAtAA2kIUxAJnLQhRGWFV1IZv6HrosKePBS0CAa5p2fGLlIm0IOzgM3KlwiBl71jEiTbtCSWXcLfECIegTYcDDPaxaydYrvXr2LO/FHUiUQkJ27qt45PwNm0DAEkGhPkhwICMIYLMZXoUr7zRBrkuQbrnbgmQSngo8ExoxNhnFD+lCPHCGhuMEIIItxRRjy8OTGYUCbDIAgYXhYBABwiSiHKEMRf445NRJ4iBzBzHJCBMECacEIAmNBxyiiESWPjSCREgsggM3jAjwh3pKFCHCF4Q4ccHyP0EQgWp7FGGBRFQQIAJAWRjgyMpfLICKOb1IY0pIoQwyQONREKCJ+eE0oETcDXgghl5zAAPNxEAY8AqNTDBQVwnyGFJDgdk4MImwSDgQTMnyhXAKAiQEcACarwhmXaYZhoQADs=' },
+            'Bolt': { cost: 70, quantity: 200, img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADMUlEQVRYhe2XT0gUURzHP2+VLpYgBBFCxyCNPHtMRaqLXTYQlDxqHiIILwoi6UW8eDC9VaywkRc9KWJ1ENmL0K46GqvrgmSzjlq4f1CE9nUYZ3b+7OxqGl58sOzMDr/3/b3v5/eb91ZIJJc5fJeqfpUAUFrooUBIiRTO36z3zudnHTYHBEJaP6NdTS5BgNGuJiaH2l0x507AmBwgFOwHoPNxlSuJo12Np6/HCAX7mRxqN2MuJIGjXU2/0L7Czy8cLK26gl69C6EE/MRmBlE11Yz5FxdcCWwkDgDIpPfIHmcpr8Cc3BBYGK5D3YqS+iPRwlNmjIHsLFhsRSiRQkzrQWXXbwIbJH/bA5SAH3UryvraJpqWoswHI9OrhIL91Db3EAr2s7P9A1VT6RicKuqAqwskUlgzL68Atu3iiWiczF6KtSX4mNCf1Tb3oAT8fJsZJHXrYQ7laRNw2pVJ7+G7liPkXHlcyYmDG4tWUuWaN1/L2mrA2l46Ani74hZfV+D9di5OCfg5TO/nxVKsS2wIjnY1VMt9x3jKJu603eqME8tpcdgc2EgcoIX1wql9+dm0NTwfQdNSLIb1yecGamzi62ubxNQkK8v6c68uKZiARIqR6VXKfHZbE9E4mSysnzDva4SG7ognFi8cXkM4zwMCIY0VWicfdzC3YjGcseJI7CRtjt2+c5fq1glXIbr2AiXgzytu/O6FxQvH0CNIROOoW1GUgN/VbaVOcWtBqVu5lVe3TtgLzoIlHw4jbjEM9x4kgXheBLYuMCaPqUmzml/c11txbqAmr0ihLpFIIRJCtpUAJGn5EHEhsNWAQMi+RoifFNTIszI6P2U8V7gwXMdhep/wfIRMFpu4EvCbzA3bi76IJFL0zurioeF6m7gTi1eXtFTm3DSYS6TwOrh47gWZ9J4nFi8coy03WA6nYFsvvNOMgmfCN0/0no+pSfPd79UloeF6ssdZc/eMqUkaut3MizpgutCda5feWf27UJcA/EpnsMac5rzo6YDBzcrPimMxDGPfYfx5OaDvns74YuIFE8iXkBNHW6Vu9XmG61VcNMDSUvmujfv/lsBFj0v/Z3SVwF+XL+3CSK1/HgAAAABJRU5ErkJggg==' },
+            'PowerBolt': { cost: 200, quantity: 2000, img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADKUlEQVRYhc1XTUgbQRh9KyVsiBnoz8HiPXgQcirbn5uCBKEWbON6WNBjaw8W7KGIF5EIhXjIoc21kIDSQ889bHsTz7aGBMUUpDYhtZesISAkXw/rbGY3s2piSjrLwmYy8733vfd9s6xCIPRzDPQV/X8gcKObTQqUNt8IpHQT60IFZEB8TtdriESqYKzQDa6cgAKFxJuxgosEf85l4nis3kW5/AvN5k9fsh0TAOBkpOs1AEAwuOEKvp0aQ+loH1aDsHR/BI3GrjPvTaArAjyjVw+n8HbqHp7eWgJgZ5jLxFE//YODfBGVioXQAFCvLyFthPFo8WtXtrQR4BnVTk/QPGuC3bTnc5k4Skf7KO//QO3EQv4b8PozMDsEvMhaUls6JkAgpV63Mw4N3gEAvN9rgR/kizgsVbH3Hdgq23u2yv62dKWA2E4vP9Zc4JWKhYMc8OEYWBhtKSOzBbhaYQ7whd7iebD4BZpmOeBc9uwxkDbCLmW8thjDdnBNsy4ncf4uIMYKFIlUSddrBIC2U2PEWJFCoU1anQDNDoEA0E5qnABQLhMnMxGltBGm1QnQ/LD9/7uZEC2M2s/iTZBfDoHBQZMYKxAA0jSLzESUsnOMVHWZAoFpVzAvuHEOzucAkK7XKBKpOjH9SDg10GjsolodgZmIIp//jSfrb3BYquLZ7XWcnX3C7FBLVpktgF24fh1hJqJyOxwphMzTRliauZ8tfD9fI6oTDG446mia1aaEA57LxJ3gyRjo+YgdkMvrZ4uZiPpak4zZ88kYKBTaJMaKlMvEXSQcArLg3E8zEXVlzkmJBDh4do5RMtZSBwAFAtOkqsuUnWPOehcBTkKsZsaKdJEtYqX7dYQYe37Yji+1QFzorXaZLaq6QoHAzIUd0Qbk0wny3hTk9dqykxqntUm0qSPKzsn59f6VCPADR5RUtMavI9JG2LHnWgQYK5KqrjjAorR+HcH39EQBMxGltUk38GUdwe0xPEXYMQFvQfLflx1UPVNARsavI8SDyKtaTwnIPPf2tVe1nhHgwb0d0QmQ36WcB7/S4G8z6vIjRBqzEwL/YvT927DvBP4C229AsQi97hQAAAAASUVORK5CYII=' },
+            'BurstArrow': { cost: 120, quantity: 400, img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAADaUlEQVRYhcWXT0gUYRjGf982WeufXTfU1EwCQQiyISU7lLIECQUR3YTEKIqCbgWB9BcsunTwUCHkYYkKD0Fh0GEpSpJOlURWuDgQlIsluKRG7FK+HZyZxt2d2nGtnmGZb9795nuf93ne2flWCcL/hC+fmxUqb/aLJhBGyTnz/E8JKJQolISB80DYEVsyAgolG1GimwsXmYtb1XYA4bo6aGsjXFdHh3nfYtTISqABOGF+zpSU0AaUmlVbcBKwY3jvC82NlQ/o0HXGg0HeTkxALEaPY86UYbAqGmXKMBaQMgwDhRJBVC4EsirwChgLBBgPBlmzYwdbg0H2+f1sd8xJGAZEo/NnBwGvyFBg3nN4PT3Nu4kJQgMDFE5OoieTxAoKMFIpAIaKi/GXlDA0MwOzs+iwQI2cIWlHA0gEpBRkL8gdv19iPp+MV1TI1epq0UEwP31d7fZYQMZAOuzr3I4MCyz/p3Sdx8Dtb9+4o2nc0zSaKyt5BUSKiwFoagmDeR2vqmLIjOv5KADI2UBAPrS2ylx3tzSC1IJdubNqt3Gu1QuSSaDIlD5aXy+zmzfL3Lp1EvP55GJBgdSaCYYf9C44O8dekguS2YSziAqhhFiMab+fjckkRWVllGoaoXics13tbNp1NEPJF0+feBHeRtbHMIEoN/8t39PhFv8Tsv4QWSSaUPI8lSIUj3MsHqfPpfq84KlhXHx3xrz2gGcCODremdiK/XUC2ZKmK+Jlzbx2RA3NW+zx8INeNu06Sl9Xu70/yGWf4NqEbnA+bm9evsiIH7rUz/0rJ2n68pCVK5YzMvIRFXF/O3pWwFn1er0JgL6udg5d6rfjiUgP10ZXEyoPsr4mxOD+atd9gmcFrKrvthQy+fkT8YuNVJ/qty0ACBQuo/7tI9SNlH3fkilwsPsmz/YESMx8Zyz2gaqaMoaP1Nr+AySUj2DRMjuxW3JPBBRK7rYUAvBjDjQNjvfcAhSWupb/Bwa/MmUu/acmzImAQolVdTqSr9/PP4QmEpEeTnfu5MDgVyZPb/it/+ChB6yqAZSCzufz/q68PMrLwzX2PMt/gPILI4C7/7DIPybbBqYZPrIWgKe7AzRe/2h/58V/TwSsqq0FZU7suJUMWOB/TusKv+2RXxPTttrWdba4k9CSEfhbyOtdsBT4CU+vfF2kdME/AAAAAElFTkSuQmCC' }
+        };
+
+        const vocations = {
+            'druid': ['UH', 'HMM', 'GFB'],
+            'sorcerer': ['SD', 'HMM', 'GFB'],
+            'paladin': ['HMM', 'Bolt', 'PowerBolt', 'BurstArrow']
         };
 
         function calculate() {
@@ -178,22 +180,29 @@
                 resultText += `Você vai ganhar 1 ponto de mana extra a cada ${regenTime.toFixed(2)} segundos.`;
             }
 
-            if (spells[vocation]) {
-                for (let [spell, { cost, quantity, img }] of Object.entries(spells[vocation])) {
-                    const manaPerMinute = ((60 / vocationTick) + (60 / regenTime)).toFixed(2);
-                    const timeToBP = ((cost * quantity) / manaPerMinute).toFixed(2);
-                    const hours = Math.floor(timeToBP / 60);
-                    const minutes = (timeToBP % 60).toFixed(0).padStart(2, '0');
-                    const formattedTime = hours > 0 ? `${hours}h:${minutes}m` : `${minutes}m`;
-                    resultText += `<br>Tempo para criar uma BP de ${spell}<img src="${img}">: ${formattedTime}.`;
-                }
-            }
-
+            resultText += calculateTimeToBP(vocation, vocationTick, regenTime);
             document.getElementById('result').innerHTML = resultText;
         }
 
-    </script>
+        function calculateTimeToBP(vocation, vocationTick, regenTime) {
+            let resultText = '';
 
+            if (vocations[vocation]) {
+                for (const spellName of vocations[vocation]) {
+                    const { cost, quantity, img } = spells[spellName];
+                    const manaPerMinute = (60 / vocationTick + 60 / regenTime).toFixed(2);
+                    const timeToBP = (cost * quantity / manaPerMinute).toFixed(2);
+                    const hours = Math.floor(timeToBP / 60);
+                    const minutes = (timeToBP % 60).toFixed(0).padStart(2, '0');
+                    const formattedTime = hours > 0 ? `${hours}h:${minutes}m` : `${minutes}m`;
+                    resultText += `<br>Tempo para criar uma BP de ${spellName} <img src="${img}">: ${formattedTime}.`;
+                }
+            }
+
+            return resultText;
+        }
+
+    </script>
 </body>
 
 </html>

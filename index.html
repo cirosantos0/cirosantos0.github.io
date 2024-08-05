@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,87 +14,146 @@
             margin: 0 auto;
             padding: 20px;
         }
+
         label {
             display: block;
             margin-top: 10px;
+            text-align: center;
         }
-        select, button {
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        select,
+        button {
             margin-top: 5px;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
         }
+
         #result {
             margin-top: 20px;
             font-weight: bold;
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
         }
     </style>
 </head>
+
 <body>
 
-    <h1>Mana Regeneration Calculator</h1>
+    <h1>Calculadora de Mana Regen - Retronia</h1>
+    <h2><a href="https://retronia.online/" target="_blank">Clique aqui para criar sua conta no Retronia!</a></h2>
+    <br>
+    <h3>Como utilizar:</h3>
+    <h3>Escolha os itens abaixo do seu personagem que possuem o status "Increased Mana Regeneration".</h3>
+    <h3>Caso você não possua o status, basta deixar o campo em "Nenhum".</h3>
 
-    <label for="vocation">Vocation:</label>
-    <select id="vocation">
-        <option value="sorcerer">Sorcerer</option>
-        <option value="druid">Druid</option>
-        <option value="knight">Knight</option>
-        <option value="paladin">Paladin</option>
-    </select>
+    <div class="form-group">
+        <label for="vocation">Vocação:</label>
+        <select id="vocation" onchange="calculate()">
+            <option value="sorcerer">Sorcerer</option>
+            <option value="druid">Druid</option>
+            <option value="knight">Knight</option>
+            <option value="paladin">Paladin</option>
+        </select>
+    </div>
 
-    <label for="promo">Promovido?</label>
-    <select id="promoted">
-        <option value="no">Não</option>
-        <option value="yes">Sim</option>
-    </select>
+    <div class="form-group">
+        <label for="promoted">Promovido?</label>
+        <select id="promoted" onchange="calculate()">
+            <option value="no">Não</option>
+            <option value="yes">Sim</option>
+        </select>
+    </div>
 
-    <label for="helmet">Helmet Tier:</label>
-    <select id="helmet">
-        <option value="0">None</option>
-        <option value="0.2">Tier 1</option>
-        <option value="0.4">Tier 2</option>
-        <option value="0.6">Tier 3</option>
-        <option value="0.8">Tier 4</option>
-    </select>
+    <div class="form-group">
+        <label for="helmet">Tier do helmet: <a href="https://retronia.online/about/itemsView/Helmets" target="_blank">?</a></label>
+        <select id="helmet" onchange="calculate()">
+            <option value="0">Nenhum</option>
+            <option value="0.2">Tier 1</option>
+            <option value="0.4">Tier 2</option>
+            <option value="0.6">Tier 3</option>
+            <option value="0.8">Tier 4</option>
+        </select>
+    </div>
 
-    <label for="armor">Armor Tier:</label>
-    <select id="armor">
-        <option value="0">None</option>
-        <option value="0.2">Tier 1</option>
-        <option value="0.4">Tier 2</option>
-        <option value="0.6">Tier 3</option>
-        <option value="0.8">Tier 4</option>
-    </select>
+    <div class="form-group">
+        <label for="armor">Tier da armor: <a href="https://retronia.online/about/itemsView/Armors" target="_blank">?</a></label>
+        <select id="armor" onchange="calculate()">
+            <option value="0">Nenhum</option>
+            <option value="0.2">Tier 1</option>
+            <option value="0.4">Tier 2</option>
+            <option value="0.6">Tier 3</option>
+            <option value="0.8">Tier 4</option>
+        </select>
+    </div>
 
-    <label for="legs">Legs Tier:</label>
-    <select id="legs">
-        <option value="0">None</option>
-        <option value="0.2">Tier 1</option>
-        <option value="0.4">Tier 2</option>
-        <option value="0.6">Tier 3</option>
-        <option value="0.8">Tier 4</option>
-    </select>
+    <div class="form-group">
+        <label for="legs">Tier da legs: <a href="https://retronia.online/about/itemsView/Legs" target="_blank">?</a></label>
+        <select id="legs" onchange="calculate()">
+            <option value="0">Nenhum</option>
+            <option value="0.2">Tier 1</option>
+            <option value="0.4">Tier 2</option>
+            <option value="0.6">Tier 3</option>
+            <option value="0.8">Tier 4</option>
+        </select>
+    </div>
 
-    <label for="boots">Boots Tier:</label>
-    <select id="boots">
-        <option value="0">None</option>
-        <option value="0.2">Tier 1</option>
-        <option value="0.4">Tier 2</option>
-        <option value="0.6">Tier 3</option>
-        <option value="0.8">Tier 4</option>
-    </select>
+    <div class="form-group">
+        <label for="boots">Tier da bota: <a href="https://retronia.online/about/itemsView/Boots" target="_blank">?</a></label>
+        <select id="boots" onchange="calculate()">
+            <option value="0">Nenhum</option>
+            <option value="0.2">Tier 1</option>
+            <option value="0.4">Tier 2</option>
+            <option value="0.6">Tier 3</option>
+            <option value="0.8">Tier 4</option>
+        </select>
+    </div>
 
-    <label for="shield">Shield Tier:</label>
-    <select id="shield">
-        <option value="0">None</option>
-        <option value="0.2">Tier 1</option>
-        <option value="0.4">Tier 2</option>
-        <option value="0.6">Tier 3</option>
-        <option value="0.8">Tier 4</option>
-    </select>
-
-    <button onclick="calculate()">Calcular Mana Regen</button>
+    <div class="form-group">
+        <label for="shield">Tier do shield: <a href="https://retronia.online/about/itemsView/Shields" target="_blank">?</a></label>
+        <select id="shield" onchange="calculate()">
+            <option value="0">Nenhum</option>
+            <option value="0.2">Tier 1</option>
+            <option value="0.4">Tier 2</option>
+            <option value="0.6">Tier 3</option>
+            <option value="0.8">Tier 4</option>
+        </select>
+    </div>
 
     <div id="result"></div>
 
     <script>
+        const spells = {
+            'druid': {
+                'UH': { cost: 100, quantity: 20, img: './images/uh.gif' },
+                'HMM': { cost: 70, quantity: 20, img: './images/hmm.gif' },
+                'GFB': { cost: 120, quantity: 20, img: './images/gfb.gif' }
+            },
+            'sorcerer': {
+                'SD': { cost: 220, quantity: 20, img: './images/sd.gif' },
+                'HMM': { cost: 70, quantity: 20, img: './images/hmm.gif' },
+                'GFB': { cost: 120, quantity: 20, img: './images/gfb.gif' }
+            },
+            'paladin': {
+                'HMM': { cost: 70, quantity: 20, img: './images/hmm.gif' },
+                'Bolt': { cost: 70, quantity: 200, img: './images/conjure_bolt.gif' },
+                'PowerBolt': { cost: 200, quantity: 2000, img: './images/conjure_power_bolt.gif' },
+                'BurstArrow': { cost: 120, quantity: 400, img: './images/conjure_explosive_arrow.gif' }
+            }
+        };
+
         function calculate() {
             const vocation = document.getElementById('vocation').value;
             const promoted = document.getElementById('promoted').value;
@@ -103,22 +163,37 @@
             const boots = parseFloat(document.getElementById('boots').value);
             const shield = parseFloat(document.getElementById('shield').value);
 
-            let baseManaTick;
-
-            if (vocation === 'sorcerer' || vocation === 'druid') {
-                baseManaTick = promoted === 'yes' ? 4 : 6;
-            } else if (vocation === 'knight') {
-                baseManaTick = 12;
-            } else if (vocation === 'paladin') {
-                baseManaTick = promoted === 'yes' ? 6 : 8;
-            }
+            let vocationTick = {
+                'sorcerer': promoted === 'yes' ? 6 : 8,
+                'druid': promoted === 'yes' ? 4 : 6,
+                'knight': 12,
+                'paladin': promoted === 'yes' ? 6 : 8
+            }[vocation] || 0;
 
             const totalContribution = helmet + armor + legs + boots + shield;
-            const regenTime = (5 * baseManaTick) / totalContribution;
+            const regenTime = (5 * vocationTick) / totalContribution;
+            let resultText = '';
 
-            document.getElementById('result').innerText = `Você vai ganhar 1 ponto de mana a cada ${regenTime.toFixed(2)} segundos.`;
+            if (totalContribution > 0) {
+                resultText += `Você vai ganhar 1 ponto de mana extra a cada ${regenTime.toFixed(2)} segundos.`;
+            }
+
+            if (spells[vocation]) {
+                for (let [spell, { cost, quantity, img }] of Object.entries(spells[vocation])) {
+                    const manaPerMinute = ((60 / vocationTick) + (60 / regenTime)).toFixed(2);
+                    const timeToBP = ((cost * quantity) / manaPerMinute).toFixed(2);
+                    const hours = Math.floor(timeToBP / 60);
+                    const minutes = (timeToBP % 60).toFixed(0).padStart(2, '0');
+                    const formattedTime = hours > 0 ? `${hours}h:${minutes}m` : `${minutes}m`;
+                    resultText += `<br>Tempo para criar uma BP de ${spell}<img src="${img}">: ${formattedTime}.`;
+                }
+            }
+
+            document.getElementById('result').innerHTML = resultText;
         }
+
     </script>
 
 </body>
+
 </html>

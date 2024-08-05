@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Mana Regen - Retronia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        select, button {
+            margin-top: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mana Regeneration Calculator</h1>
+
+    <label for="vocation">Vocation:</label>
+    <select id="vocation">
+        <option value="sorcerer">Sorcerer</option>
+        <option value="druid">Druid</option>
+        <option value="knight">Knight</option>
+        <option value="paladin">Paladin</option>
+    </select>
+
+    <label for="promo">Promovido?</label>
+    <select id="promoted">
+        <option value="no">Não</option>
+        <option value="yes">Sim</option>
+    </select>
+
+    <label for="helmet">Helmet Tier:</label>
+    <select id="helmet">
+        <option value="0">None</option>
+        <option value="0.2">Tier 1</option>
+        <option value="0.4">Tier 2</option>
+        <option value="0.6">Tier 3</option>
+        <option value="0.8">Tier 4</option>
+    </select>
+
+    <label for="armor">Armor Tier:</label>
+    <select id="armor">
+        <option value="0">None</option>
+        <option value="0.2">Tier 1</option>
+        <option value="0.4">Tier 2</option>
+        <option value="0.6">Tier 3</option>
+        <option value="0.8">Tier 4</option>
+    </select>
+
+    <label for="legs">Legs Tier:</label>
+    <select id="legs">
+        <option value="0">None</option>
+        <option value="0.2">Tier 1</option>
+        <option value="0.4">Tier 2</option>
+        <option value="0.6">Tier 3</option>
+        <option value="0.8">Tier 4</option>
+    </select>
+
+    <label for="boots">Boots Tier:</label>
+    <select id="boots">
+        <option value="0">None</option>
+        <option value="0.2">Tier 1</option>
+        <option value="0.4">Tier 2</option>
+        <option value="0.6">Tier 3</option>
+        <option value="0.8">Tier 4</option>
+    </select>
+
+    <label for="shield">Shield Tier:</label>
+    <select id="shield">
+        <option value="0">None</option>
+        <option value="0.2">Tier 1</option>
+        <option value="0.4">Tier 2</option>
+        <option value="0.6">Tier 3</option>
+        <option value="0.8">Tier 4</option>
+    </select>
+
+    <button onclick="calculate()">Calcular Mana Regen</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+            const vocation = document.getElementById('vocation').value;
+            const promoted = document.getElementById('promoted').value;
+            const helmet = parseFloat(document.getElementById('helmet').value);
+            const armor = parseFloat(document.getElementById('armor').value);
+            const legs = parseFloat(document.getElementById('legs').value);
+            const boots = parseFloat(document.getElementById('boots').value);
+            const shield = parseFloat(document.getElementById('shield').value);
+
+            let baseManaTick;
+
+            if (vocation === 'sorcerer' || vocation === 'druid') {
+                baseManaTick = promoted === 'yes' ? 4 : 6;
+            } else if (vocation === 'knight') {
+                baseManaTick = 12;
+            } else if (vocation === 'paladin') {
+                baseManaTick = promoted === 'yes' ? 6 : 8;
+            }
+
+            const totalContribution = helmet + armor + legs + boots + shield;
+            const regenTime = (5 * baseManaTick) / totalContribution;
+
+            document.getElementById('result').innerText = `Você vai ganhar 1 ponto de mana a cada ${regenTime.toFixed(2)} segundos.`;
+        }
+    </script>
+
+</body>
+</html>

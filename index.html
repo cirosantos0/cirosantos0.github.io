@@ -44,7 +44,8 @@
 
         h1,
         h2,
-        h3 {
+        h3,
+        h4 {
             text-align: center;
         }
     </style>
@@ -52,12 +53,12 @@
 
 <body>
 
-    <h1>Calculadora de Mana Regen - Retronia</h1>
-    <h2><a href="https://retronia.online/" target="_blank">Clique aqui para criar sua conta no Retronia!</a></h2>
+    <h2>Calculadora de Mana Regen - Retronia</h2>
+    <h3><a href="https://retronia.online/" target="_blank">Clique aqui para criar sua conta no Retronia!</a></h3>
     <br>
-    <h3>Como utilizar:</h3>
-    <h3>Escolha os itens abaixo do seu personagem que possuem o status "Increased Mana Regeneration".</h3>
-    <h3>Caso você não possua o status, basta deixar o campo em "Nenhum".</h3>
+    <h4>Como utilizar:</h4>
+    <h4>Escolha os itens abaixo do seu personagem que possuem o status "Increased Mana Regeneration".</h4>
+    <h4>Caso você não possua o status, basta deixar o campo em "Nenhum".</h4>
 
     <div class="form-group">
         <label for="vocation">Vocação:</label>
@@ -166,7 +167,7 @@
             const shield = parseFloat(document.getElementById('shield').value);
 
             let vocationTick = {
-                'sorcerer': promoted === 'yes' ? 6 : 8,
+                'sorcerer': promoted === 'yes' ? 4 : 6,
                 'druid': promoted === 'yes' ? 4 : 6,
                 'knight': 12,
                 'paladin': promoted === 'yes' ? 6 : 8
